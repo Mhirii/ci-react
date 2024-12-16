@@ -19,7 +19,7 @@ help() {
     echo "  --no-headless         Run the tests in the browser (non-headless mode)."
     echo "                        Note: This requires a graphical environment."
     echo ""
-    echo "  -P, --pull            Automatically pull docker image without asking for confirmation."
+    echo "  -P, --pull            Automatically pull docker image without asking for confirmatio."
     echo ""
     echo "  -h, --help            Display this help message."
     echo ""
@@ -52,7 +52,7 @@ case $key in
     ;;
 		-P | --pull)
 		pull_image=true
-		exit 0
+    shift # argument
 		;;
     --no-headless)
     headless=false
