@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.8 on linux)" generated="2024-12-16T11:00:35.845598" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Suites" source="/home/pwuser/test_suites">
+<suite id="s1-s1" name="TS-01" source="/home/pwuser/test_suites/TS-01.robot">
+<kw name="New Browser" owner="Browser" type="SETUP">
+<msg time="2024-12-16T11:00:35.973672" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/home/pwuser/test_suites/browser/traces/temp/2934ddd2-c75c-43cd-ad6d-89c6ab3b4773"}</msg>
+<msg time="2024-12-16T11:00:35.979685" level="INFO">Starting Browser process /home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/index.js using port 33179</msg>
+<msg time="2024-12-16T11:00:35.979756" level="INFO">Node startup parameters: ['node', '/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/index.js', '33179']</msg>
+<msg time="2024-12-16T11:00:36.526310" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/home/pwuser/test_suites/browser/traces/temp/2934ddd2-c75c-43cd-ad6d-89c6ab3b4773"}</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-12-16T11:00:35.971528" elapsed="0.554978"/>
+</kw>
+<test id="s1-s1-t1" name="Add a ToDo" line="20">
+<kw name="Given Todo App is open">
+<kw name="New Page" owner="Browser">
+<msg time="2024-12-16T11:00:36.810317" level="INFO">Keyword 'Take Screenshot  fail-screenshot-{index}' could not be run on failure:
+Error: Tried to take screenshot, but no page was open.</msg>
+<msg time="2024-12-16T11:00:36.810394" level="INFO">See also file:///home/pwuser/test_suites/playwright-log.txt for additional details.</msg>
+<msg time="2024-12-16T11:00:36.810683" level="FAIL">Execution terminated by signal</msg>
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T11:00:36.535024" elapsed="0.280857">Execution terminated by signal</status>
+</kw>
+<status status="FAIL" start="2024-12-16T11:00:36.533234" elapsed="0.282847">Execution terminated by signal</status>
+</kw>
+<kw name="When Add new Todo &quot;test1&quot;" source_name="Add new Todo &quot;${title}&quot;">
+<status status="NOT RUN" start="2024-12-16T11:00:36.816363" elapsed="0.001054"/>
+</kw>
+<kw name="Then Counter should be 1 item left" source_name="Counter should be ${count}">
+<status status="NOT RUN" start="2024-12-16T11:00:36.817701" elapsed="0.000811"/>
+</kw>
+<doc>Checks if ToDos can be added and ToDo count increases</doc>
+<tag>add todo</tag>
+<status status="FAIL" start="2024-12-16T11:00:36.526739" elapsed="0.292071">Execution terminated by signal</status>
+</test>
+<test id="s1-s1-t2" name="Add two Todos" line="27">
+<kw name="Given Todo App is open">
+<kw name="New Page" owner="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="FAIL" start="2024-12-16T11:00:36.848748" elapsed="0.001280">Execution terminated by signal</status>
+</kw>
+<status status="FAIL" start="2024-12-16T11:00:36.847317" elapsed="0.002883">Execution terminated by signal</status>
+</kw>
+<kw name="When Add new Todo &quot;test1&quot;" source_name="Add new Todo &quot;${title}&quot;">
+<status status="NOT RUN" start="2024-12-16T11:00:36.850523" elapsed="0.001208"/>
+</kw>
+<kw name="And Add new Todo &quot;test2&quot;" source_name="Add new Todo &quot;${title}&quot;">
+<status status="NOT RUN" start="2024-12-16T11:00:36.852076" elapsed="0.000967"/>
+</kw>
+<kw name="Then Counter should be 2 items left" source_name="Counter should be ${count}">
+<status status="NOT RUN" start="2024-12-16T11:00:36.853438" elapsed="0.001351"/>
+</kw>
+<doc>Checks if ToDos can be added and ToDo count increases</doc>
+<tag>add todo</tag>
+<status status="FAIL" start="2024-12-16T11:00:36.841127" elapsed="0.014003">Execution terminated by signal</status>
+</test>
+<test id="s1-s1-t3" name="Add ToDo And Mark It" line="35">
+<tag>mark todo</tag>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-16T11:00:36.865939" elapsed="0.000509">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t4" name="Check If Marked ToDos are removed" line="42">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-16T11:00:36.867358" elapsed="0.000527">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t5" name="Check if Active Filter works" line="49">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-16T11:00:36.868877" elapsed="0.000776">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t6" name="Check if Completed Filter works" line="57">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-16T11:00:36.870737" elapsed="0.000500">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t7" name="Check if Clear Completed works" line="65">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-16T11:00:36.872625" elapsed="0.000664">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t8" name="Add A Lot Of Todos" line="73">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-12-16T11:00:36.874299" elapsed="0.000457">Test execution stopped due to a fatal error.</status>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2024-12-16T11:00:36.877904" level="FAIL">ConnectionError: Playwright process has been terminated with code 130</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="FAIL" start="2024-12-16T11:00:36.875898" elapsed="0.002320">ConnectionError: Playwright process has been terminated with code 130</status>
+</kw>
+<doc>This is a Robot test suite</doc>
+<status status="FAIL" start="2024-12-16T11:00:35.868467" elapsed="1.009850">Suite teardown failed:
+ConnectionError: Playwright process has been terminated with code 130</status>
+</suite>
+<status status="FAIL" start="2024-12-16T11:00:35.847888" elapsed="1.031497"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="8" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="2" skip="0">add todo</stat>
+<stat pass="0" fail="1" skip="0">mark todo</stat>
+</tag>
+<suite>
+<stat pass="0" fail="8" skip="0" id="s1" name="Test Suites">Test Suites</stat>
+<stat pass="0" fail="8" skip="0" id="s1-s1" name="TS-01">Test Suites.TS-01</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-16T11:00:36.865351" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: recvmsg:Connection reset by peer</msg>
+<msg time="2024-12-16T11:00:36.866842" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+<msg time="2024-12-16T11:00:36.868261" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+<msg time="2024-12-16T11:00:36.870077" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+<msg time="2024-12-16T11:00:36.871790" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+<msg time="2024-12-16T11:00:36.873646" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+<msg time="2024-12-16T11:00:36.875172" level="ERROR">Calling method '_end_test' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+<msg time="2024-12-16T11:00:36.878800" level="ERROR">Calling method '_end_suite' of listener 'Browser' failed: ConnectionError: Playwright process has been terminated with code 130</msg>
+</errors>
+</robot>

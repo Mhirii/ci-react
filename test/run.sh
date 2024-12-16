@@ -75,7 +75,7 @@ check_image() {
 			read -r answer 
 			case $answer in 
 				[Yy]) 
-					docker pull $image 
+					docker pull $image:$version
 					check_image
 					;; 
 				[Nn])

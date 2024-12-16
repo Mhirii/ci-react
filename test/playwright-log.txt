@@ -1,0 +1,57 @@
+{"level":30,"time":"2024-12-16T11:00:36.322Z","pid":8,"hostname":"fcf186d123fb","msg":"Listening on 33179"}
+(node:8) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2024-12-16T11:00:36.422Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2024-12-16T11:00:36.524Z","pid":8,"hostname":"fcf186d123fb","msg":"Adding browser to stack: chromium, version: 131.0.6778.33"}
+{"level":30,"time":"2024-12-16T11:00:36.524Z","pid":8,"hostname":"fcf186d123fb","msg":"End of node method newBrowser"}
+{"level":30,"time":"2024-12-16T11:00:36.524Z","pid":8,"hostname":"fcf186d123fb","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2024-12-16T11:00:36.529Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.530Z","pid":8,"hostname":"fcf186d123fb","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.539Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method newPage"}
+{"level":30,"time":"2024-12-16T11:00:36.539Z","pid":8,"hostname":"fcf186d123fb","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-12-16T11:00:36.547Z","pid":8,"hostname":"fcf186d123fb","msg":"Changed active context"}
+{"level":30,"time":"2024-12-16T11:00:36.579Z","pid":8,"hostname":"fcf186d123fb","msg":"Video path: undefined"}
+{"level":30,"time":"2024-12-16T11:00:36.579Z","pid":8,"hostname":"fcf186d123fb","msg":"Changed active page"}
+{"level":30,"time":"2024-12-16T11:00:36.797Z","pid":8,"hostname":"fcf186d123fb","msg":"Removed page=581383c9-c1db-4b78-a8de-2b47fc5e2233 from context=b986b9cb-19aa-4691-af63-39db1e8fbdfd page stack"}
+{"level":30,"time":"2024-12-16T11:00:36.798Z","pid":8,"hostname":"fcf186d123fb","msg":"Error of node method  newPage"}
+================= Original suppressed error =================
+page.goto: Target page, context or browser has been closed
+Call log:
+[2m  - navigating to "https://todomvc.com/examples/typescript-react/", waiting until "load"[22m
+
+    at newPage (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/index.js:12546:18)
+    at async PlaywrightServer.newPage (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/index.js:13107:28)
+=============================================================
+{"level":30,"time":"2024-12-16T11:00:36.808Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method takeScreenshot"}
+================= Original suppressed error =================
+Error: Tried to take screenshot, but no page was open.
+    at exists (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/index.js:10725:11)
+    at takeScreenshot (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/index.js:10769:3)
+    at PlaywrightServer.takeScreenshot (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/index.js:13107:34)
+    at Object.onReceiveHalfClose (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server.js:1425:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:569:31)
+    at BaseServerInterceptingCall.handleEndEvent (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:609:14)
+    at ServerHttp2Stream.<anonymous> (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/node_modules/@grpc/grpc-js/build/src/server-interceptors.js:376:18)
+    at ServerHttp2Stream.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+=============================================================
+{"level":30,"time":"2024-12-16T11:00:36.808Z","pid":8,"hostname":"fcf186d123fb","msg":"Error of node method  takeScreenshot"}
+{"level":30,"time":"2024-12-16T11:00:36.823Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.824Z","pid":8,"hostname":"fcf186d123fb","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.826Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.826Z","pid":8,"hostname":"fcf186d123fb","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.828Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.828Z","pid":8,"hostname":"fcf186d123fb","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.831Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.831Z","pid":8,"hostname":"fcf186d123fb","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.833Z","pid":8,"hostname":"fcf186d123fb","msg":"Changed active context"}
+{"level":30,"time":"2024-12-16T11:00:36.835Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method closeContext"}
+{"level":30,"time":"2024-12-16T11:00:36.836Z","pid":8,"hostname":"fcf186d123fb","msg":"Error of node method  closeContext"}
+================= Original suppressed error =================
+browserContext.close: Target page, context or browser has been closed
+    at async closeContext (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/index.js:12506:3)
+    at async PlaywrightServer.closeContext (/home/pwuser/.local/lib/python3.12/site-packages/Browser/wrapper/index.js:13107:28)
+=============================================================
+{"level":30,"time":"2024-12-16T11:00:36.845Z","pid":8,"hostname":"fcf186d123fb","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2024-12-16T11:00:36.845Z","pid":8,"hostname":"fcf186d123fb","msg":"End of node method getBrowserCatalog"}
