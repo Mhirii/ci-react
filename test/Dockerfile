@@ -1,0 +1,67 @@
+FROM mcr.microsoft.com/playwright:v1.48.0-focal
+
+USER root
+RUN apt-get update
+
+USER root
+RUN apt-get install -y software-properties-common
+
+USER root
+RUN add-apt-repository ppa:deadsnakes/ppa
+
+USER root
+RUN apt-get update
+
+USER root
+RUN apt-get install -y python3.12
+
+USER root
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 1 && \
+        update-alternatives --set python3 /usr/bin/python3.12
+
+        # Install pip for Python 3.12
+USER root
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+    python3 get-pip.py && \
+    rm get-pip.py
+
+# Upgrade pip and install wheel
+USER root
+RUN pip3 install --no-cache-dir --upgrade pip wheel && \
+    pip3 --version && \
+    python3 --version
+
+# Remove not needed packages
+USER root
+RUN apt-get purge -y python3-urllib3 python3-six
+
+# Clean up
+USER root
+RUN apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set environment variables
+ENV PATH="/home/pwuser/.local/bin:${PATH}"
+ENV NODE_PATH=/usr/lib/node_modules
+
+# Cache operations
+USER root
+RUN mv /root/.cache/ /home/pwuser/.cache || true
+RUN chmod a+rwx -R /home/pwuser/.cache || true
+
+# Switch to pwuser for the remaining operations
+USER pwuser
+
+# Upgrade pip and wheel for the user
+RUN pip3 install --no-cache-dir --user --upgrade pip wheel
+
+# Print pip version
+RUN pip3 --version
+
+# Install RobotFramework and Browser library
+RUN pip3 install --no-cache-dir --user --upgrade robotframework robotframework-browser==19.1.1
+
+# Initialize Browser library
+RUN python3 -m Browser.entry init
+
+# docker run -it --rm -v $(pwd):/home/pwuser/robotframework-examples -w /home/pwuser/robotframework-examples robot-playwright:latest robot --variable BROWSER:chromium --variable URL:https://www.google.com robot/google.robot
