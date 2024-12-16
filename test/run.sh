@@ -2,7 +2,12 @@
 
 headless=true
 path=$(pwd)
-image=robotframework
+pull_image=false
+
+# image=robotframework
+# version=latest
+image=ghcr.io/marketsquare/robotframework-browser/rfbrowser-stable
+version=19.1.1
 
 help() {
 		echo ""
@@ -13,6 +18,8 @@ help() {
     echo ""
     echo "  --no-headless         Run the tests in the browser (non-headless mode)."
     echo "                        Note: This requires a graphical environment."
+    echo ""
+    echo "  -P, --pull            Automatically pull docker image without asking for confirmation."
     echo ""
     echo "  -h, --help            Display this help message."
     echo ""
@@ -43,6 +50,10 @@ case $key in
     shift # argument
     shift # value
     ;;
+		-P | --pull)
+		pull_image=true
+		exit 0
+		;;
     --no-headless)
     headless=false
     shift # argument
@@ -57,29 +68,25 @@ done
 check_image() {
 	if ! docker images --format "{{.Repository}}" | grep -q "^$image$"; then
 		echo "Image $image not found."
-		echo "Would you like to pull it? [Y]es or [N]o"
-		read -r answer 
-		case $answer in 
-			[Yy]) 
-				docker pull $image 
-				check_image
-				;; 
-			[Nn])
-				exit 1 
-				;; 
-			*)
-				echo "Invalid input. Please enter Y/y or N/n." 
-				exit 1
-				;; 
-		esac
-
-		# echo "Would you like to pull it or build it?"
-		# select yn in "[P]ull" "[B]uild"; do
-		# 	case $yn in
-		# 		P ) docker pull $image; break;;
-		# 		B ) docker build -t $image .; break;;
-		# 	esac
-		# done
+		if (( $pull_image )); then
+			docker pull $image:$version
+		else
+			echo "Would you like to pull it? [Y]es or [N]o"
+			read -r answer 
+			case $answer in 
+				[Yy]) 
+					docker pull $image 
+					check_image
+					;; 
+				[Nn])
+					exit 1 
+					;; 
+				*)
+					echo "Invalid input. Please enter Y/y or N/n." 
+					exit 1
+					;; 
+			esac
+		fi
 	fi
 }
 
@@ -87,5 +94,5 @@ check_image
 
  docker run -it --rm \
 	 -v $path:/home/pwuser/test_suites \
-	 -w /home/pwuser/test_suites robotframework:latest robot \
+	 -w /home/pwuser/test_suites $image:$version robot \
 		--variable HEADLESS:$headless .
